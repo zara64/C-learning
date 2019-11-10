@@ -1,19 +1,21 @@
 #include <stdio.h>
 
 
-int main(int argc, char const *argv[])
+int main()
 {
-	char snt[300];
-	char string2[300];
-	int c=0, d=0;
+	char snt[300],string2[300];
+	int c=0;
+	int d=0;
+	int i=0;
 
 	printf("Please enter a sentence :\n");
-	fscanf(stdin,"%s",snt);
+	fgets(snt,300,stdin);
 
-	int i=0;
-	while(snt[i] != '\0'){
+	printf("%s\n",snt);
 
-		if(snt[i] == ' ')
+	while(snt[c] != '\0'){
+
+		if(snt[c] == ' ')
 		{ 
 			i++;
 		}
@@ -26,9 +28,8 @@ int main(int argc, char const *argv[])
 	}
 
 
-
 	printf("the number of spaces in sentence is %d \n",i);
-	printf("the sentence without space is %s ", string2);
+	printf("the sentence without space is %s \n", string2);
 
 	return 0;
 }
