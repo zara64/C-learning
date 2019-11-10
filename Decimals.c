@@ -1,19 +1,16 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 
 int dec_to_int(char* s){
 
-	int count=0;
-	int mainNum=0;
-	while(s[count] != '\0')
-	{
-		count++;
-	}
 	
-	for (int i =0; i <count; i++)
+	int mainNum=0;
+	int len=strlen(s);
+	
+	for (int i =0; i <len; i++)
 	{
-		mainNum += s[i]*(pow(10,count-1));
-		count--;
+		mainNum += ((s[len - (i+1)]) * pow(10,i));
 	}
 	return mainNum;
 }
