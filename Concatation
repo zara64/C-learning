@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void concatention(char* str1, char* str2)
+{
+	char cntStr[500];
+	
+	int i=0;
+	while(str1[i] != '\0')
+	{
+		cntStr[i]= str1[i];
+		i++;
+	}
+
+	int j=i-1;
+	int k=0;
+	while(str2[k] != '\0')
+	{
+		cntStr[j]=str2[k];
+		k++;
+		j++;
+	}
+	cntStr[j+1]='\0';
+
+	printf("the final string is %s \n", cntStr);
+}
+
+
+int main(int argc, char const *argv[])
+{
+	char str1[300];
+	char str2[300];
+	printf("Please enter the first string :\n");
+	fgets(str1,300,stdin);
+
+	printf("Please enter the string you want to be concatened :\n");
+	fgets(str2,300,stdin);
+
+	//char result[300];
+	//result = ;
+	concatention(str1,str2);
+
+
+	return 0;
+}
