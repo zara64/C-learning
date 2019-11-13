@@ -23,13 +23,13 @@ char* strConcatenate(char* str1,char* str2 )
 	int len3 = len1+len2+1;
 	str3 = malloc(len3);
 
-	while( *str1 != '\0' ){
+	while( *str1 != '\n' ){
 		str3[i] = *str1;
 		str1++;
 		i++;
 	}
 
-	while( *str2 != '\0'){
+	while( *str2 != '\n'){
 		str3[i] = *str2;
 		str2++;
 		i++;
@@ -52,7 +52,7 @@ int main(int argc, char const *argv[])
 	fgets(str2,300,stdin);
 
 	char* str=strConcatenate(str1,str2);
-	printf("The result of concatenation of first and second string is %s", str );
+	printf("The result of concatenation of first and second string is %s\n", str );
 
 	free(str);
 
