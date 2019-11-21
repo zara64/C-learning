@@ -8,41 +8,38 @@ struct point
 
 struct polygon
 {
-	int n; // the number of points
-	point* p;	
+	//int n;
+	struct point pnt;	
 };
-
-struct point coordination(double x, double y)
-{
-
-	printf("Enter the dimension of your coordination like x;y : \n");
-	scanf("%lf;%lf",&x,&y);
-
-	struct point p = {x,y};
-
-}
-
 
 int main(int argc, char const *argv[])
 {
-	double x,y;
+	
 	int n;
-	struct point p1;
-	struct polygon p2;
+	double x,y;
+	struct polygon* poly;
+	poly= (struct polygon*) malloc(n*sizeof(struct polygon));
+
+
+
 	printf("Please enter the number of vertices:\n");
 	scanf("%d",&n);
-	// assign a dynamic memory to points
-	p1 = (struct point*) alloc(n,sizeof(struct point));
 
 	for (int i = 0; i < n; ++i)
-	 {
+	{
+		printf("Enter your vertex like x;y : \n");
+		scanf("%lf;%lf",&x,&y);
+		struct point p = {x,y};
 
-			(*p1+i) = coordination(x,y);
-	 } 
+		poly[i].pnt= p;
+	}
+	
+	for (int i = 0; i < n; ++i)
+	{
+		printf("%lf;%lf;%p\n", poly[i].pnt.x,poly[i].pnt.y, &poly[i].pnt);
+	}
 
-	 p2=(struct polygon*) alloc(sizeof(struct polygon));
-	 p2={n,p1};
-	 
 
-	return 0;
+
+return 0;
 }
